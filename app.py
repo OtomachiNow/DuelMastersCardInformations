@@ -1,18 +1,22 @@
 import sqlite3
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 # networkx, k_clique_communities, defaultdict は不要になるため削除
 # import networkx as nx
 # from networkx.algorithms.community import k_clique_communities
 # from collections import defaultdict
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static') # static_folderを指定
 CORS(app)
 
 def get_db_connection():
     conn = sqlite3.connect('cardList.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+@app.route('/')
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/api/search')
 def search_cards():
