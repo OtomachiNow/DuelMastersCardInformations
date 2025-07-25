@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:5000/api/search?query=${query}`);
+            const response = await fetch(`/api/search?query=${query}`);
             const cards = await response.json();
             resultsList.innerHTML = '';
             if (cards.length > 0) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         coOccurrenceList.innerHTML = '<li>検索中...</li>';
         try {
-            const response = await fetch(`http://localhost:5000/api/co-occurrence?name=${encodeURIComponent(cardName)}`);
+            const response = await fetch(`/api/co-occurrence?name=${encodeURIComponent(cardName)}`);
             const data = await response.json();
             coOccurrenceList.innerHTML = '';
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- コミュニティランキング機能 ---
     async function loadMergedCommunities() {
         try {
-            const response = await fetch('http://localhost:5000/static/merged_communities.json');
+            const response = await fetch('/static/merged_communities.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:5000/api/search?query=${query}`);
+            const response = await fetch(`/api/search?query=${query}`);
             const cards = await response.json();
             if (cards.length > 0) {
                 cards.forEach(card => {
