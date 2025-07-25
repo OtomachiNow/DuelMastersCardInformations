@@ -14,6 +14,10 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(app.static_folder, filename)
+
 @app.route('/')
 def serve_index():
     return send_from_directory(app.static_folder, 'index.html')
