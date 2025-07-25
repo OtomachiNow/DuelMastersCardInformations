@@ -1,0 +1,155 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a2b4d;
+    margin-bottom: 25px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Important for padding and width */
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+#resultsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#resultsList li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+#resultsList li:last-child {
+    border-bottom: none;
+}
+
+#resultsList li:hover {
+    background-color: #f9f9f9;
+}
+
+/* --- タブのスタイル --- */
+.tab-container {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-bottom: -2px;
+    font-size: 16px;
+    color: #555;
+}
+
+.tab.active {
+    border-color: #ddd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #fff;
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* --- コンテンツのスタイル --- */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+#coOccurrenceSearchBtn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#coOccurrenceSearchBtn:hover {
+    background-color: #0056b3;
+}
+
+#coOccurrenceList {
+    list-style-type: decimal; /* 番号付きリスト */
+    padding-left: 20px; /* 内側の余白 */
+    margin-top: 20px;
+}
+
+#coOccurrenceList li {
+    padding: 8px 0;
+    font-size: 15px;
+}
+
+/* --- オートコンプリート用のスタイル --- */
+.autocomplete-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}

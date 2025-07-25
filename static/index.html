@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デュエル・マスターズ カード情報</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>デュエル・マスターズ カード情報</h1>
+
+        <div class="tab-container">
+            <div class="tab active" data-tab="search">カード検索</div>
+            <div class="tab" data-tab="co-occurrence">共起度ランキング</div>
+            <div class="tab" data-tab="community">コミュニティランキング</div>
+        </div>
+
+        <div class="content-container">
+            <!-- カード検索タブ -->
+            <div class="content active" id="search-content">
+                <input type="text" id="searchInput" placeholder="カード名を入力...">
+                <ul id="resultsList"></ul>
+            </div>
+
+            <!-- 共起度ランキングタブ -->
+            <div class="content" id="co-occurrence-content">
+                <div class="autocomplete-container">
+                    <input type="text" id="coOccurrenceInput" placeholder="カード名を入力...">
+                    <div id="coOccurrenceAutocompleteList" class="autocomplete-items"></div>
+                </div>
+                <ol id="coOccurrenceList"></ol>
+            </div>
+
+            <!-- コミュニティランキングタブ -->
+            <div class="content" id="community-content">
+                <div class="autocomplete-container">
+                    <input type="text" id="communityInput" placeholder="カード名を入力...">
+                    <div id="communityAutocompleteList" class="autocomplete-items"></div>
+                </div>
+                <ul id="communityResultsList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
